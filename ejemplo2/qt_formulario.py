@@ -1,11 +1,15 @@
+import os
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QGridLayout, QMessageBox
 
 def main():
     app = QApplication(sys.argv)
 
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    css_path = os.path.join(script_dir, 'css', 'styles.css')
+
     # Cargar el archivo CSS
-    with open("ejemplo2/css/styles.css", "r") as f:
+    with open(css_path, "r") as f:
         app.setStyleSheet(f.read())
 
     # Crear la ventana principal
